@@ -1,0 +1,38 @@
+{
+  "name": "stuff",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --setupFiles dotenv/config",
+    "start": "npx ts-node src/server.ts",
+    "build": "npx tsc",
+    "typeorm": "typeorm-ts-node-commonjs -d ./src/database/dataSource.ts",
+    "create-migration": "npm run typeorm migration:generate -d ./src/database/migrations/dataSource",    
+    "migrate": "npm run typeorm migration:run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.5.1",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.17.1",
+    "axios": "^1.7.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "pg": "^8.12.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
+  }
+}
